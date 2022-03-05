@@ -29,9 +29,8 @@ def jump():
 
 
 number_of_hurdles = 6
-hurdles_completed = 0
 
-while number_of_hurdles > hurdles_completed:
+while number_of_hurdles > 0:
     move()
     jump()
-    hurdles_completed += 1
+    number_of_hurdles -= 1
