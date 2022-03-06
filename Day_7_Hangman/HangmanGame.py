@@ -10,19 +10,23 @@ for i in range(0, len(chosen_word)):
     display.append('_')
 print(display)
 
-while "_" in display:
+end_of_game = False
+
+while not end_of_game:
     guess = input("Guess a letter: ").lower()
 
     if len(guess) > 1:
         print("A guess can only be a single letter!")
-        return
+        break
 
     for position in range(0, len(chosen_word)):
         letter = chosen_word[position]
 
         if letter == guess:
             display[position] = letter
-        else:
-            print("Wrong")
 
     print(display)
+
+    if "_" not in display:
+        end_of_game = True
+        print("You win!")
