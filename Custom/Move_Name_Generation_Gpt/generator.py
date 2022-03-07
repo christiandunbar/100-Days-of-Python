@@ -41,6 +41,6 @@ else:
 results = set()
 while len(results) < 20:
     name = model_infer(model, tokenizer, "movie:", device).replace("movie: ", "").strip()
-    if name not in set(movie_list) and name not in results:
+    if name.isascii() and name not in set(movie_list) and name not in results:
         results.add(name)
         print(name)
